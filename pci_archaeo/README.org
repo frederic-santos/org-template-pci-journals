@@ -1,0 +1,9 @@
+#+TITLE: Additional instructions for using the org template
+#+AUTHOR: Frédéric Santos
+
+- ~main.org~ should contain the main text of your manuscript
+- ~biblio.bib~ should contain your references in BibTeX format (possibly exported from Zotero using the [[https://github.com/retorquere/zotero-better-bibtex][BetterBibTeX]] plugin)
+- In the header of ~main.org~, indicate the recommender's name and the reviewers' names according to the information sent back to you by the PCI team (lines 9-10)
+- The file ~preambule_archaeo.tex~ (or the preambule file corresponding to another PCI journal) should be modified to select badges: choose the badges "Open Code" and "Open Data" only if appropriate (in addition to the "Open Access" and "Open Peer-Review" badges). If they are not appropriate, comment the lines 87 and 89 in ~preambule_archaeo.tex~
+- In the file ~preambule_archaeo.tex~, you'll also have to provide a correct reference for your own manuscript (line 97)
+- Do not hesitate to modify the LaTeX template as you want (and send it back to the PCI team if you made significant improvements).

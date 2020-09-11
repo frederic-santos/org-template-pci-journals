@@ -1,0 +1,39 @@
+#+TITLE: An org mode template for submissions to /Peer Community In/ journals
+#+AUTHOR: Frédéric Santos
+#+OPTIONS: _:nil
+
+This repository provides a minimal [[https://orgmode.org/][org mode]] template for writing scientific articles, with a convenient formatting for each journal from [[https://peercommunityin.org/][Peer community in]].
+
+You'll find in this repository one directory for each journal. To use the template matching your disciplinary field, simply download the corresponding folder and work directly in this folder, by writing your main text in the file ~main.org~. The output after a =C-c C-e l o= on the file ~main.org~ should correspond to the file ~main.pdf~, provided here as a reference.
+
+Additional instructions are available in each specific folder.
+
+* Disclaimer
+- All the files from this repo (except the ~main.*~ files) are taken from PCI official website. I do not provide any support for those files, in particular for their LaTeX template, ~preambule_*.tex~. The org template only tries to offer a convenient org mode adaptation to their LaTeX file.
+- Each ~preambule_*.tex~ file (which has been created by the PCI team, and is available on their website) has been slightly modified to allow an easier org export.
+
+* org-ref
+This org mode template supposes that you are using [[https://github.com/jkitchin/org-ref][org-ref]] to handle your bibliography. To install and use org-ref, simply add the following lines to your ~.emacs~ ([[https://mg.readthedocs.io/latexmk.html][latexmk]] must be installed on your computer):
+
+#+begin_src emacs-lisp :results output
+(use-package org-ref
+  :ensure t
+  :after org
+  :init
+  (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f")))
+#+end_src
+
+If you do not wish to use ~org-ref~, simply remove the related parts in the org template.
+
+* ~:ignore:~ tag
+The =:ignore:= tag used for some org headlines is provided by the package [[https://code.orgmode.org/bzg/org-mode/raw/master/contrib/lisp/ox-extra.el][ox-extra]]. If you want to use it, you'll have to download this file in a folder that can be found by Emacs (i.e., a folder which is in its ~load-path~), and to add the following lines in your ~.emacs~:
+#+begin_src emacs-lisp
+(require 'ox-extra)
+(ox-extras-activate '(ignore-headlines))
+#+end_src
+
+* Useful resources
+Writing a reproducible paper with org mode is incredibly convenient and pleasant; however, it may be challenging for beginners. If you are not /really/ familiar with org-mode, the following resources may be useful:
+- [[http://archive.indianstatistics.org/tools/orgpapers.pdf][Using Emacs, Org-mode and R for Research Writing]], a great tutorial by Vikas Rawal
+- [[http://cachestocaches.com/2018/6/org-literate-programming/][Literate programming with Org mode]], a blog post by Greg J. Stein
+- [[https://orgmode.org/worg/org-contrib/babel/uses.html#sec-6][A (non exhasutive!) list of scientific papers prepared with org mode]]

@@ -1,0 +1,87 @@
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \input{preambule_evolbiol.tex}
+#+LATEX_HEADER: \usepackage[natbibapa]{apacite}
+#+LATEX_HEADER: \newcommand{\preprinttitle}{This is the title of the preprint}
+#+LATEX_HEADER: \newcommand{\listauthors}{\raggedright Frédéric Santos \textsuperscript{1}}
+#+LATEX_HEADER: \newcommand{\listinstitutions}{\textsuperscript{1} UMR 5199 PACEA, Université de Bordeaux -- CNRS -- MCC, Pessac, France}
+#+LATEX_HEADER: \newcommand{\datepub}{ddth Month yyyy}
+#+LATEX_HEADER: \newcommand{\recommender}{FirstName FamilyName}
+#+LATEX_HEADER: \newcommand{\reviewers}{FirstName FamilyName and two anonymous reviewer}
+#+LATEX_HEADER: \newcommand{\email}{mail.mail@mail.xx}
+#+LATEX_HEADER: \newcommand{\preprintabstract}{This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract. This is the abstract.}
+#+LATEX_HEADER: \newcommand{\preprintkeywords}{KeywordOne; KeywordTwo; KeywordThree; KeywordFour; KeywordFive}
+#+OPTIONS: toc:nil
+
+\beginingpreprint
+
+* Introduction
+According to cite:adams2006_ResolutionSmallscaleCommingling... The same authors also illustrated this in another study citep:adams2008_RecoveryAnalysisIdentification.
+
+* Materials and methods
+Material is described in Table ref:table-mat.
+
+#+CAPTION: Population samples used in this study. label:table-mat
+|------------+-------------------+-----------------|
+| Population | Number of females | Number of males |
+|------------+-------------------+-----------------|
+| Sayala     |                15 |              12 |
+| Coimbra    |                20 |              25 |
+| London     |                10 |              16 |
+|------------+-------------------+-----------------|
+
+* Results
+An example of figure produced with R code is given in Figure ref:fig-iris.
+
+#+begin_src R :results graphics file :file figure.png :exports results :width 600 :height 400 :session *R*
+data(iris)
+par(cex = 1.1)
+plot(Sepal.Width ~ Sepal.Length, col = Species,
+     pch = 16, data = iris)
+#+end_src
+
+#+CAPTION: A figure. label:fig-iris
+#+ATTR_LATEX: :width 0.7 \textwidth
+#+RESULTS:
+[[file:figure.png]]
+
+* Discussion
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+* Conclusion
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+* Data accessibility
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+Data are available online: link or DOI of the webpage hosting the data
+
+* Supplementary material
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+Script and codes are available online: link or DOI of the webpage hosting the script and codes
+
+* Acknowledgements
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+This is your acknowledgments
+
+* Conflict of interest disclosure
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+The authors of this preprint declare that they have no financial conflict of interest with the content of this article. XXX and XXX are recommenders for PCI XXX
+
+* References                                                         :ignore:
+bibliography:biblio.bib
+bibliographystyle:apacite
+* Emacs config                                                     :noexport:
+;;; Local variables:
+;;; org-export-with-title:nil
+;;; org-export-with-author:nil
+;;; org-export-with-date:nil
+;;; org-latex-default-packages-alist:nil
+;;; End:
